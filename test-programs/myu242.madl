@@ -1,0 +1,31 @@
+// Global upper bound
+N : int = 10;
+
+fn square(x : int) : int {
+    result : int = x * x;
+    return result;
+}
+
+fn sumOfEvenSquares(limit : int) : int {
+    fn isEven(n : int) : bool {
+        return n % 2 == 0;
+    }
+
+    sum : int = 0;
+    i : int = 0;
+
+    while (i <= limit) {
+        if (isEven(i)) {
+            sum = sum + square(i);
+        }
+        i = i + 1;
+    }
+
+    return sum;
+}
+
+fn main() : int {
+    result : int = sumOfEvenSquares(N);
+    output(result);
+    return 0;
+}
